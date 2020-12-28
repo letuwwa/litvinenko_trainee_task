@@ -32,8 +32,17 @@ def names_match():
 
 
 def get_multiples_of_three():
-    pass
-
+    nums_list = []
+    for i in range(10):
+        while True:
+            try:
+                next_num = int(input('Введите число для записи в список: '))
+                nums_list.append(next_num)
+                break
+            except ValueError:
+                print('Это не число! Попробуйте еще раз...')
+    print('Итоговый список:', nums_list)
+    print('Список чисел, кратных 3: ', [num for num in nums_list if num % 3 == 0])
 
 
 while True:
@@ -51,7 +60,7 @@ while True:
         elif choice == 2:
             names_match()
         elif choice == 3:
-            pass
+            get_multiples_of_three()
         elif choice == 4:
             print('Выход...')
             break
